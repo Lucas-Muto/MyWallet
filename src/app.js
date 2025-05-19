@@ -1,11 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import authRouter from "./routers/authRouter.js";
 import transactionRouter from "./routers/transactionRouter.js";
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
